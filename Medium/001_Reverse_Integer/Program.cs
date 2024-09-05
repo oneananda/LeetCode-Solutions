@@ -15,10 +15,15 @@
         public static int Reverse(int x)
         {
             int result = 0;
+            bool isNegative = false;
+            long tempX = x;
+            if (tempX < 0)
+            {
+                isNegative = true;
+                tempX = -tempX;
+            }
 
-            if (x < 0) x = -x;
-
-            string currentValue = x.ToString();
+            string currentValue = tempX.ToString();
 
             string convertedValue = string.Empty;
 
@@ -36,7 +41,7 @@
             else
             {
                 result = Convert.ToInt32(convertedValue);
-                if (x < 0)
+                if (isNegative)
                 {
                     result = -result;
                 }
