@@ -27,11 +27,19 @@
                 convertedValue += currentValue[i].ToString();
             }
 
-            result = Convert.ToInt32(convertedValue);
+            long partialResult = Convert.ToInt64(convertedValue);
 
-            if (x < 0)
+            if (partialResult > int.MaxValue)
             {
-                result = -result;
+                result = 0;
+            }
+            else
+            {
+                result = Convert.ToInt32(convertedValue);
+                if (x < 0)
+                {
+                    result = -result;
+                }
             }
 
             return result;

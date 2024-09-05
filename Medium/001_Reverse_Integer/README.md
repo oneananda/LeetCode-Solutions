@@ -1,4 +1,6 @@
 # Reverse Integer
 
-// https://leetcode.com/problems/reverse-integer/description/
+**Solution for the problem**
+
+https://leetcode.com/problems/reverse-integer/description/
 
