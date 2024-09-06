@@ -6,12 +6,44 @@
         {
             // https://leetcode.com/problems/reverse-integer/description/
 
-            Console.WriteLine("Enter the integer to reverse!");
 
-            Console.WriteLine($"Output: " + Reverse(Convert.ToInt32(Console.ReadLine())));
+            #region Regular Testing by inputting numbers of our choice
+
+            // Uncomment to test one-by-one
+            // RunRegularTests();
+
+            #endregion
+
+
+            #region Automated Testing
+
+            // Comment this if you need to test one-by-one
+            RunAutomatedTests();
+
+            #endregion
 
             Console.ReadLine();
         }
+
+        private static void RunRegularTests()
+        {
+            Console.WriteLine("Enter the integer to reverse!");
+
+            Console.WriteLine($"Output: " + Reverse(Convert.ToInt32(Console.ReadLine())));
+        }
+
+        private static void RunAutomatedTests()
+        {
+            TestReverse_PositiveNumber();
+        }
+        static void TestReverse_PositiveNumber()
+        {
+            int input = 123;
+            int expected = 321;
+            int result = Reverse(input);
+            Console.WriteLine($"TestReverse_PositiveNumber: Input={input}, Expected={expected}, Result={result}, Passed={result == expected}");
+        }
+
         public static int Reverse(int x)
         {
             int result = 0;
