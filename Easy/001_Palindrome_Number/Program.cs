@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            // https://leetcode.com/problems/palindrome-number/description/
             Console.WriteLine($"Enter the number to check!");
             int number = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(IsPalindrome(number));
