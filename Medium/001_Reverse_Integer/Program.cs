@@ -35,6 +35,7 @@
         private static void RunAutomatedTests()
         {
             TestReverse_PositiveNumber();
+            TestReverse_NegativeNumber();
         }
         static void TestReverse_PositiveNumber()
         {
@@ -42,6 +43,14 @@
             int expected = 321;
             int result = Reverse(input);
             Console.WriteLine($"TestReverse_PositiveNumber: Input={input}, Expected={expected}, Result={result}, Passed={result == expected}");
+        }
+
+        static void TestReverse_NegativeNumber()
+        {
+            int input = -123;
+            int expected = -321;
+            int result = Reverse(input);
+            Console.WriteLine($"TestReverse_NegativeNumber: Input={input}, Expected={expected}, Result={result}, Passed={result == expected}");
         }
 
         public static int Reverse(int x)
