@@ -13,9 +13,12 @@
 
         public static bool IsPalindrome(int x)
         {
-            //char[] strX = x.ToString().ToCharArray();
-            //char[] str2X = strX.Reverse().ToArray();
-            return x.ToString().ToCharArray().SequenceEqual(x.ToString().ToCharArray().Reverse().ToArray());
+            // Accepted solution
+            // return x.ToString().ToCharArray().SequenceEqual(x.ToString().ToCharArray().Reverse().ToArray());
+
+            // Refactored, accepted solution
+            char[] strX = x.ToString().ToCharArray();
+            return strX.SequenceEqual(strX.Reverse().ToArray());
         }
     }
 }
