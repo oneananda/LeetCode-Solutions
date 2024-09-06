@@ -33,7 +33,7 @@ To get started with the repository:
 
 1. **Clone the repository:**
 ```
-	git clone https://github.com/your-username/LeetCode-Solutions.git
+	git clone https://github.com/oneananda/LeetCode-Solutions.git
 ```
 2. **Navigate to the directory:**
 
