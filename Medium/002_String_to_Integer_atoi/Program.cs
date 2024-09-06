@@ -4,7 +4,12 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.ReadLine(); // Hold the screen
+        }
+
+        public static int MyAtoi(string s)
+        {
+            return s.Length;
         }
     }
 }
