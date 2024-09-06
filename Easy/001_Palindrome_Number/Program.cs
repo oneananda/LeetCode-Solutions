@@ -1,0 +1,10 @@
+﻿namespace _001_Palindrome_Number
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
