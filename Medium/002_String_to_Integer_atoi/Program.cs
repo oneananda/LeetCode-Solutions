@@ -16,7 +16,7 @@ namespace _002_String_to_Integer_atoi
         public static int MyAtoi(string s)
         {
             int result = 0;
-            bool isConverted = long.TryParse(s, out long result1);
+            bool isConverted = BigInteger.TryParse(s, out BigInteger result1);
             string convertedValue = string.Empty;
             bool isNegative = false;
 
