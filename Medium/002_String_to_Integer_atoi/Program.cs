@@ -1,4 +1,6 @@
-﻿namespace _002_String_to_Integer_atoi
+﻿using System.Numerics;
+
+namespace _002_String_to_Integer_atoi
 {
     internal class Program
     {
@@ -13,45 +15,82 @@
 
         public static int MyAtoi(string s)
         {
-            var strArr = s.TrimStart().ToArray();
+            int result = 0;
+            bool isConverted = long.TryParse(s, out long result1);
             string convertedValue = string.Empty;
             bool isNegative = false;
-            foreach (var i in strArr)
+
+            if (isConverted)
             {
-                if (i == '-')
-                {
-                    isNegative = true;
-                }
-                else
-                {
-                    if (Char.IsDigit(i))
-                        convertedValue += Convert.ToString(i);
-                    else break;
-                }                
-            }
-
-            if (convertedValue == string.Empty)
-            {                
-                convertedValue = "0";
-                isNegative = false;
-            }
-
-            int result = 0;
-            long partialResult = Convert.ToInt64(convertedValue);
-
-            if (partialResult > int.MaxValue)
-            {
-                result = 0;
+                convertedValue = result1.ToString();
             }
             else
             {
-                result = Convert.ToInt32(convertedValue);
-                if (isNegative)
+
+                var strArr = s.TrimStart().ToArray();
+
+                if (strArr.Length > 0)
                 {
-                    result = -result;
+
+                    if (strArr[0] == '-')
+                    {
+                        strArr[0] = '0';
+                        isNegative = true;
+                    }
+
+                    if (strArr[0] == '+')
+                    {
+                        strArr[0] = '0';
+                    }
+
+                    foreach (var i in strArr)
+                    {
+                        if (Char.IsDigit(i))
+                            convertedValue += Convert.ToString(i);
+                        else break;
+                    }
+
+                    if (convertedValue == string.Empty)
+                    {
+                        convertedValue = "0";
+                        isNegative = false;
+                    }
                 }
             }
+            if (convertedValue != string.Empty)
+            {
+                BigInteger partialResult = 0;
+                BigInteger partialResult2 = 0;
+                bool isLargerThanLong = BigInteger.TryParse(convertedValue, out partialResult2);
+                partialResult = partialResult2;
 
+                if (isNegative) partialResult = -partialResult;
+
+                if (partialResult2 < 0)
+                {
+                    partialResult2 = -partialResult2;
+                }
+
+                if (partialResult2 > int.MaxValue)
+                {
+                    if (partialResult < 0)
+                    {
+                        result = -int.MaxValue - 1;
+                    }
+                    else
+                    {
+                        result = int.MaxValue;
+                    }
+                }
+                else
+                {
+                    result = Convert.ToInt32(convertedValue);
+                    if (isNegative)
+                    {
+                        result = -result;
+                    }
+                }
+            }
             Console.WriteLine(convertedValue);
             return result;
         }
