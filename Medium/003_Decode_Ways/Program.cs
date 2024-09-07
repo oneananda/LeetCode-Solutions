@@ -6,12 +6,14 @@
         {
             // https://leetcode.com/problems/decode-ways/ 
 
-            Console.WriteLine("Hello, World!");
+            Console.ReadLine(); // Hold the screen
         }
 
-        public int NumDecodings(string s)
+        public static int NumDecodings(string s)
         {
+            int result = 0;
 
+            return result;
         }
     }
 }
