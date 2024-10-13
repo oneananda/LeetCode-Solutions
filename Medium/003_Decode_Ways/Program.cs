@@ -29,7 +29,7 @@
             }
 
             //bool isContainsZero = false;
-            if (s.Contains('0'))
+            if (s[0] == '0')
             {
                 //isContainsZero = true;
                 result = s.Where(x => x != '0').Count();
@@ -52,7 +52,7 @@
                         string str = firstChar.ToString() + secondChar.ToString();
 
                         if (letterToNumberMap.ContainsKey(str)) result++;
-                    }                    
+                    }
                 }
             }
 
