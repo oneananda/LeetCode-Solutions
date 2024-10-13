@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            ReverseWords("a good   example");
             Console.ReadLine(); // Hold the screen
         }
 
@@ -11,7 +12,15 @@
         {
             string result = string.Empty;
 
-            return result;
+            List<string> words = s.Split(" ").ToList();
+
+            for (int i = words.Count - 1; i >= 0; i--)
+            {
+                if (words[i].Trim().Length > 0)
+                    result += words[i] + " ";
+            }
+
+            return result.Trim();
         }
     }
 }
