@@ -24,8 +24,8 @@
                 int count = 0;
                 var str = string.Join("", s.Skip(i).Take(k).ToList());
 
-                if(str.Length >= k)
-                {                    
+                if (str.Length >= k)
+                {
                     foreach (var item in str.ToLower())
                     {
                         if (vowelsList.Contains(item.ToString()))
@@ -34,8 +34,8 @@
                         }
                     }
                 }
-                if (count > result)                
-                    result =count;        
+                if (count > result)
+                    result = count;
 
             }
             return result;
