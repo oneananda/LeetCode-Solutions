@@ -4,7 +4,15 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+
+            Console.WriteLine(MaxVowels("abciiidef",3));
+            Console.WriteLine(MaxVowels("aeiou", 2));
+            Console.WriteLine(MaxVowels("leetcode", 3));
+
+        }
+        public static int MaxVowels(string s, int k)
+        {
+            return 0;
         }
     }
 }
